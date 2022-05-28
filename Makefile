@@ -6,7 +6,7 @@
 #    By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 10:53:33 by mtsuji            #+#    #+#              #
-#    Updated: 2022/05/17 16:21:23 by mtsuji           ###   ########.fr        #
+#    Updated: 2022/05/18 15:33:10 by mtsuji           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,15 @@ NAME	=	so_long
 
 SRCS	=	main.c	\
 			create_trgb.c	\
+			./srcs/key_hook.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
 HEADER	=	./includes/
 
-LIB_LINUX = -Lmlx_linux -lmlx -lz -lXext -lbsd -lX11
+LIB_LINUX = -Lminilibx-linux  -lmlx -lz -lXext -lX11
 
-MLX_LINUX = ./mlx_linux/
+MLX_LINUX = ./minilibx-linux/
 
 LIBFT	=	./libft/
 

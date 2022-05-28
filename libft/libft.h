@@ -14,6 +14,7 @@
 # define LIBFT_H
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
+# define BUFFER_SIZE 1
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -62,4 +63,5 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		count_words(const char *str);
 void	put_error(void);
+int	get_next_line(int fd, char **line);
 #endif
