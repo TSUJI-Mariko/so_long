@@ -3,10 +3,11 @@ make: Entering directory '/home/tj/Documents/42/so_long'
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c main.c -o main.o
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c create_trgb.c -o create_trgb.o
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/key_hook.c -o srcs/key_hook.o
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/error_message.c -o srcs/error_message.o
 make -C ./minilibx-linux/
 make -C ./libft/
-ar rcs ./libft/libft.a main.o create_trgb.o ./srcs/key_hook.o
+ar rcs ./libft/libft.a main.o create_trgb.o ./srcs/key_hook.o ./srcs/error_message.o
 ranlib ./libft/libft.a
-gcc -Wall -Wextra -Werror -g3 -fsanitize=address  main.o create_trgb.o ./srcs/key_hook.o -Lminilibx-linux  -lmlx -lz -lXext -lX11 ./libft/libft.a -o so_long
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  main.o create_trgb.o ./srcs/key_hook.o ./srcs/error_message.o -Lminilibx-linux  -lmlx -lz -lXext -lX11 ./libft/libft.a -o so_long
 make: Leaving directory '/home/tj/Documents/42/so_long'
  

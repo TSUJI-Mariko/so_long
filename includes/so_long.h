@@ -12,6 +12,8 @@
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# define HEIGHT 400
+# define WIDTH 1500
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -31,10 +33,26 @@ typedef struct s_game
     int map_height;
     int map_width;
     int fd;
+    int line_char;
+    int line_num;
+    int line_end;
+    int number;
+    int x;
+    int y;
+    char *map;
+    t_img   img;
+    t_img   player;
+    t_img   *home;
+    t_img   *back;
+    t_img   wall;
+    t_img   ground;
 } t_game;
 
 
 //key_hook
 int exit_hook(t_game *game);
 int key_hook(int keycode, t_game *game);
+
+//error_message
+void    error_message(char *message, char *map);
 #endif

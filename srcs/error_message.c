@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/27 10:15:01 by mtsuji            #+#    #+#             */
-/*   Updated: 2021/05/27 16:59:37 by mtsuji           ###   ########.fr       */
+/*   Created: 2022/05/30 11:58:45 by mtsuji            #+#    #+#             */
+/*   Updated: 2022/05/30 11:58:47 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/so_long.h"
 
-int	ft_strlen(const char *s)
+void    error_message(char *message, char *map)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+    ft_putstr_fd(message, 2);
+    free(map);
+    exit(1);
 }
