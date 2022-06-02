@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'main.o', needed by 'so_long'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 31 14:27:14 2022
+# Make data base, printed on Thu Jun  2 12:04:59 2022
 
 # Variables
 
@@ -51,11 +53,11 @@ RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"f5b8523d60216379ef9ba6dc243eb093.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /usr/bin/dbus-update-activation-environment
+_ = /usr/share/code/code
 # makefile (from 'Makefile', line 36)
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address 
 # environment
-JOURNAL_STREAM = 8:51311
+JOURNAL_STREAM = 8:48709
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -77,9 +79,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 20)
 OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2094
+MANAGERPID = 2117
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e74e3d0a-29d6-4957-a71a-95d4c2546248.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-db76048e-37c3-4d4f-bfd2-62237caf13b2.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -93,7 +95,9 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2312,unix/tj-MacBookPro:/tmp/.ICE-unix/2312
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2337,unix/tj-MacBookPro:/tmp/.ICE-unix/2337
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -103,15 +107,17 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 37e69c3313254ae48e99116e40d995d4
+INVOCATION_ID = 3e17e909263347e589fe6ed71dea976e
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3449
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5988
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +129,7 @@ PWD = /home/tj/Documents/42/so_long
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2273
+SSH_AGENT_PID = 2299
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -137,9 +143,11 @@ VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/c3511e6c69bb39013c4a4b
 # environment
 LOGNAME = tj
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
+# environment
+ZSH = /home/tj/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -176,12 +184,16 @@ LC_MONETARY = fr_FR.UTF-8
 XDG_CURRENT_DESKTOP = Unity
 # makefile (from 'Makefile', line 13)
 NAME = so_long
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+OLDPWD = /home/tj
 # default
 .VARIABLES := 
 # automatic
@@ -196,6 +208,8 @@ MAKEFLAGS = pqrR
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# environment
+MAIL = tj@student.42.fr
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -216,6 +230,8 @@ LC_NUMERIC = fr_FR.UTF-8
 <F = $(notdir $<)
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
+# environment
+PAGER = less
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 22)
@@ -241,9 +257,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3449
+VSCODE_PID = 5988
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=19/146=13%
+# Load=123/1024=12%, Rehash=0, Collisions=19/153=12%
 
 # Pattern-specific Variable Values
 
@@ -251,9 +267,9 @@ VSCODE_PID = 3449
 
 # Directories
 
-# . (device 2050, inode 14683888): 17 files, no impossibilities.
+# . (device 2050, inode 14683888): 14 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -266,8 +282,7 @@ all: so_long
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
@@ -276,11 +291,10 @@ all: so_long
 
 # Not a target:
 libft/:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-31 11:09:26.383834073
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
  
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 Makefile:
@@ -313,10 +327,9 @@ fclean: clean
 
 # Not a target:
 srcs/error_message.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-31 11:09:20.151946999
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -336,23 +349,20 @@ clean:
 
 # Not a target:
 srcs/key_hook.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-31 11:09:20.031949175
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 11:09:19.827952877
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 so_long: main.o create_trgb.o srcs/key_hook.o srcs/error_message.o libft/
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-31 11:09:26.603830091
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 42):
 			@make -C $(MLX_LINUX)
 			@make -C $(LIBFT)
@@ -362,10 +372,9 @@ so_long: main.o create_trgb.o srcs/key_hook.o srcs/error_message.o libft/
 
 # Not a target:
 create_trgb.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-31 11:09:19.89995157
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
 # Load=15/1024=1%, Rehash=0, Collisions=0/39=0%
@@ -378,9 +387,9 @@ create_trgb.o:
 # strcache buffers: 1 (0) / strings = 30 / storage = 256 B / avg = 8 B
 # current buf: size = 8162 B / used = 256 B / count = 30 / avg = 8 B
 
-# strcache performance: lookups = 53 / hit rate = 43%
+# strcache performance: lookups = 50 / hit rate = 40%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=1/53=2%
-# Finished Make data base on Tue May 31 14:27:14 2022
+# Load=30/8192=0%, Rehash=0, Collisions=1/50=2%
+# Finished Make data base on Thu Jun  2 12:04:59 2022
 
  

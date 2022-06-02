@@ -13,7 +13,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # define HEIGHT 400
-# define WIDTH 1500
+# define WIDTH 2000
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -44,7 +44,9 @@ typedef struct s_game
     t_img   player;
     t_img   *home;
     t_img   *back;
-    t_img   wall;
+    t_img   *wall;
+    t_img   *collect;
+    t_img   *person1;
     t_img   ground;
 } t_game;
 

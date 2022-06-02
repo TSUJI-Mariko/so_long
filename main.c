@@ -49,6 +49,8 @@ void	init_map2(t_game *game, char *map_all)
 	check_elements(map_all);
 	game->map = ft_strdup(map_all);
 	game->fd = close(game->fd);
+	game->map_width = game->line_char * 32;
+	game->map_height = (game->line_num - 1) * 32;
 	free(map_all);
 }
 
@@ -125,13 +127,17 @@ void	load_image(t_game *game, t_img **image, char *filename)
 void	image_setting(t_game *game)
 {
 	load_image(game, &game->home, "./img/home.xpm");
-	load_image(game, &game->back, "./img/bg.xpm");
+	load_image(game, &game->back, "./img/ground_blue.xpm");
+	load_image(game, &game->wall, "./img/tile.xpm");
+	load_image(game, &game->collect, "./img/star.xpm");
+	load_image(game, &game->person1, "./img/Mario1.xpm");
 }
+
 int	init_structure(t_game *game)
 {
 	game->mlx.mlx = mlx_init();
-	game->mlx.mlx_win = mlx_new_window(game->mlx.mlx, WIDTH, HEIGHT, "So_long"); 
-	game->mlx.mlx_img = mlx_new_image(game->mlx.mlx, WIDTH, HEIGHT);
+	game->mlx.mlx_win = mlx_new_window(game->mlx.mlx, game->map_width, game->map_height, "So_long"); 
+	game->mlx.mlx_img = mlx_new_image(game->mlx.mlx, game->map_width, game->map_height);
 	image_setting(game);
 	return (1);
 }
@@ -160,13 +166,13 @@ void draw_one_image(t_game *game, t_img *image, int x, int y)
 	int j;
 
 	j = 0;
-	while (j < 16)
+	while (j < 32)
 	{
 		i = 0;
-		while (i < 16)
+		while (i < 32)
 		{
 			color = get_pixel(image, i, j);
-			if (color != rgb_to_int(0, 255, 255, 255))
+			if (color != rgb_to_int(255, 255, 255, 255))
 			{
 				draw_pixel(game->mlx.mlx_img, x + i, y + j, color);
 				//mlx_pixel_put(game->mlx.mlx, game->mlx.mlx_win, x + i, y + j, color);
@@ -181,7 +187,7 @@ void draw(t_game *game)
 	int z;
 
 	z = 0;
-	game->x = -16;
+	game->x = -32;
 	game->y = 0;
 	game->number = 0;
 	while (game->y < (game->line_num - 1))
@@ -192,12 +198,16 @@ void draw(t_game *game)
 			if (game->map[z + game->number] == '1')
 			{
 				//draw_square(game, game->back, game->x += 16, game->y * 15);
-				draw_one_image(game, game->home, game->x += 16, game->y * 15);
+				draw_one_image(game, game->wall, game->x += 32, game->y * 31);
 			}
-			else
-			{
-				draw_one_image(game, game->back, game->x += 16, game->y * 15);
-			}
+			else if (game->map[z + game->number] == '0')
+				draw_one_image(game, game->back, game->x += 32, game->y * 31);
+			else if (game->map[z + game->number] == 'E')
+				draw_one_image(game, game->home, game->x += 32, game->y * 31);
+			else if (game->map[z + game->number] == 'C')
+				draw_one_image(game, game->collect, game->x += 32, game->y * 31);
+			else if (game->map[z + game->number] == 'P')
+				draw_one_image(game, game->person1, game->x += 32, game->y * 31);
 			z++;
 		}
 		game->y++;
