@@ -12,25 +12,23 @@
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(long nb)
 {
-	char	c;
-	long	a;
+	static int	byte;
+	int			byte_minus;
 
-	a = nb;
-	if (a < 0)
+	byte = 0;
+	byte_minus = 0;
+	if (nb < 0)
 	{
-		write(1, "-", 1);
-		a = a * -1;
+		byte_minus = ft_putchar('-');
+		nb *= -1;
 	}
-	if (a >= 10)
+	if (nb > 9)
 	{
-		ft_putnbr(a / 10);
-		ft_putnbr(a % 10);
+		ft_putnbr(nb / 10);
+		nb %= 10;
 	}
-	else
-	{
-		c = a + '0';
-		write(1, &c, 1);
-	}
+	byte += ft_putchar(nb + 48);
+	return (byte + byte_minus);
 }

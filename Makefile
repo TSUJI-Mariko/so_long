@@ -16,6 +16,9 @@ SRCS	=	main.c	\
 			create_trgb.c	\
 			./srcs/key_hook.c	\
 			./srcs/error_message.c\
+			./srcs/actions.c	\
+			./srcs/drawing.c	\
+			./bonus/printer_clear.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 

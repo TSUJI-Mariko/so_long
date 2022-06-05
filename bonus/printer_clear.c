@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   printer_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 22:33:40 by mtsuji            #+#    #+#             */
-/*   Updated: 2021/05/31 22:33:44 by mtsuji           ###   ########.fr       */
+/*   Created: 2022/06/05 14:05:04 by mtsuji            #+#    #+#             */
+/*   Updated: 2022/06/05 14:05:06 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/so_long.h"
 
-int	ft_putstr(char *str)
+void printer_clear(char *filename)
 {
-	int	i;
+    int fd;
+    char *line;
+    int gnl;
 
-	if (!str)
-		i = write(1, "(null)", 6);
-	else
-		i = write(1, &*str, ft_strlen(str));
-	return (i);
+    fd = open(filename, O_RDONLY);
+    if (fd < 0)
+        return;
+    
+    gnl = get_next_line(fd, &line);
+    while (gnl)
+    {
+            ft_printf("%s\n", line);
+            free(line);
+            gnl = get_next_line(fd, &line);
+    }
+    close(fd);
+    free(line);
 }

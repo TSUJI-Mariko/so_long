@@ -1,43 +1,5 @@
 #include "./includes/so_long.h"
 
-void check_wall(char *line, char *map_all)
-{
-	int i;
-
-	i = 0;
-	while (line[i])
-	{
-		if (line[i] != '1')
-		{
-			ft_putstr_fd("map is'nt surrounded by walls '1'", 2);
-			free(map_all);
-			exit(1);
-		}
-		i++;
-	}
-}
-void	check_elements(char *map_all)
-{
-	int i;
-	int p;
-
-	i = 0;
-	p = 0;
-	while (map_all[i])
-	{
-		if (map_all[i] != '1' && map_all[i] != '0' &&
-			map_all[i] != 'E' && map_all[i] != 'P'
-			&& map_all[i] != 'C')
-			error_message("there is another word", map_all);
-		else if (map_all[i] == 'P')
-			p++;
-		i++;
-	}
-	if (p > 1)
-		error_message("not only one person on map", map_all);
-
-}
-
 void	init_map2(t_game *game, char *map_all)
 {
 	if ( ft_strchr(map_all, 'E') == NULL
@@ -96,6 +58,7 @@ char init_map(t_game *game, char *map)
 	int ret;
 	char *map_all;
 	
+	game->move = 0;
 	game->line_num = 0;
 	map_all = malloc(sizeof(char *) * 10000);
 	*map_all = 0;
@@ -141,80 +104,6 @@ int	init_structure(t_game *game)
 	image_setting(game);
 	return (1);
 }
-unsigned int get_pixel(t_img *img, int x, int y)
-{
-	return (*(unsigned int *)(img->data + (x * img->bpp / 8 + y * img->size_line)));
-}
-
-unsigned int rgb_to_int(int o, int r, int g, int b)
-{
-	return (o << 24 | r << 16 | g << 8 | b);
-}
-
-void draw_pixel(t_img *mlx_img, int x, int y, int color)
-{
-	char *target;
-
-	target = mlx_img->data + (x * mlx_img->bpp / 8 + y * mlx_img->size_line);
-	*(unsigned int *)target = color;
-}
-
-void draw_one_image(t_game *game, t_img *image, int x, int y)
-{
-	unsigned int color;
-	int i;
-	int j;
-
-	j = 0;
-	while (j < 32)
-	{
-		i = 0;
-		while (i < 32)
-		{
-			color = get_pixel(image, i, j);
-			if (color != rgb_to_int(255, 255, 255, 255))
-			{
-				draw_pixel(game->mlx.mlx_img, x + i, y + j, color);
-				//mlx_pixel_put(game->mlx.mlx, game->mlx.mlx_win, x + i, y + j, color);
-			}
-			i++;
-		}
-		j++;
-	}
-}
-void draw(t_game *game)
-{
-	int z;
-
-	z = 0;
-	game->x = -32;
-	game->y = 0;
-	game->number = 0;
-	while (game->y < (game->line_num - 1))
-	{
-		z = 0;
-		while (z < game->line_char)	
-		{
-			if (game->map[z + game->number] == '1')
-			{
-				//draw_square(game, game->back, game->x += 16, game->y * 15);
-				draw_one_image(game, game->wall, game->x += 32, game->y * 31);
-			}
-			else if (game->map[z + game->number] == '0')
-				draw_one_image(game, game->back, game->x += 32, game->y * 31);
-			else if (game->map[z + game->number] == 'E')
-				draw_one_image(game, game->home, game->x += 32, game->y * 31);
-			else if (game->map[z + game->number] == 'C')
-				draw_one_image(game, game->collect, game->x += 32, game->y * 31);
-			else if (game->map[z + game->number] == 'P')
-				draw_one_image(game, game->person1, game->x += 32, game->y * 31);
-			z++;
-		}
-		game->y++;
-		game->number = game->y * game->line_char;
-	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->mlx.mlx_img, 0, 0);
-}
 
 int main(int argc, char **argv)
 {
@@ -227,11 +116,20 @@ int main(int argc, char **argv)
 	init_map(&game, argv[1]);
 	init_structure(&game);
 	draw(&game);
+	//right(&game);
 //	mlx_pixel_put(game.mlx.mlx, game.mlx.mlx_win, 100, 100, 0xFFFFFF);
-	mlx_key_hook(game.mlx.mlx_win, key_hook, (void *)0);
-	mlx_hook(game.mlx.mlx_win, 33, 1L << 5, exit_hook, (void *)0); 
+	mlx_key_hook(game.mlx.mlx_win, key_hook, &game);
+	mlx_hook(game.mlx.mlx_win, 17, 1L << 0, exit_hook, &game); 
+	//mlx_hook(game.mlx.mlx_win, 15, 1L << 16, reduce_window, &game);
 	//ウィンドウをXマーククリックで閉じる
 	mlx_loop(game.mlx.mlx);
+	/*
+	draw_map(&game);
+	mlx_key_hook(game.mlx.mlx_win, key_hook, &game);
+	mlx_hook(game.mlx.mlx_win, 33, 1L << 5, exit_hook, &game);
+	mlx_hook(game.mlx.mlx_win, 15, 1L << 16, reduce_window, &game);
+	mlx_loop(game.mlx.mlx);
+	*/
 }
 /*
 typedef struct	s_vars {

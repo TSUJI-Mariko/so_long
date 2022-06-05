@@ -20,12 +20,20 @@
 # include <stdlib.h>
 # include <string.h>
 # include <ctype.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_count
+{
+	int		byte;
+	int		index;
+	va_list	argument;
+}	t_count;
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *sm, size_t n);
@@ -65,4 +73,9 @@ void	ft_putnbr_fd(int n, int fd);
 int		count_words(const char *str);
 void	put_error(void);
 int	get_next_line(int fd, char **line);
+int		ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(long nb);
+
 #endif

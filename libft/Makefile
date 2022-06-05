@@ -46,7 +46,11 @@ SRCS	=	ft_memset.c		\
 			ft_putnbr_fd.c	\
 			gnl.c			\
 			ft_strlcat.c 	\
-
+			ft_putchar.c	\
+			ft_putstr.c		\
+			ft_printf.c		\
+			ft_putnbr.c		\
+			
 OBJS	=	${SRCS:.c=.o}
 
 CC		=	gcc

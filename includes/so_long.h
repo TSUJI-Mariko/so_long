@@ -39,6 +39,7 @@ typedef struct s_game
     int number;
     int x;
     int y;
+    int move;
     char *map;
     t_img   img;
     t_img   player;
@@ -54,7 +55,29 @@ typedef struct s_game
 //key_hook
 int exit_hook(t_game *game);
 int key_hook(int keycode, t_game *game);
+int	reduce_window(t_game *game);
 
 //error_message
 void    error_message(char *message, char *map);
+void check_wall(char *line, char *map_all);
+void	check_elements(char *map_all);
+//actions
+void right(t_game *game);
+void left(t_game *game);
+void up(t_game *game);
+void down(t_game *game);
+
+//load_image
+void	load_image(t_game *game, t_img **image, char *filename);
+void	image_setting(t_game *game);
+//drawing
+void draw(t_game *game);
+void draw_one_image(t_game *game, t_img *image, int x, int y);
+void draw_pixel(t_img *mlx_img, int x, int y, int color);
+unsigned int rgb_to_int(int o, int r, int g, int b);
+unsigned int get_pixel(t_img *img, int x, int y);
+void checker_image(char c, t_game *game);
+
+//bonus
+void printer_clear(char *filename);
 #endif
