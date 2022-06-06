@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 13:44:30 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/05 13:44:33 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/06/06 23:10:16 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	print_before_sign(char *format, t_count *count)
 		conversion_checker(format, count);
 	}
 }
+
 int	ft_printf(const char *format, ...)
 {
 	t_count	count;

@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:14:16 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/04/24 10:19:48 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/06/06 23:28:47 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int	ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -72,10 +72,10 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		count_words(const char *str);
 void	put_error(void);
-int	get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
 int		ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
-int	ft_putnbr(long nb);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_putnbr(long nb);
 
 #endif

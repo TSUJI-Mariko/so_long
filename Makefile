@@ -6,18 +6,20 @@
 #    By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 10:53:33 by mtsuji            #+#    #+#              #
-#    Updated: 2022/05/18 15:33:10 by mtsuji           ###   ########.fr        #
+#    Updated: 2022/06/06 23:31:16 by mtsuji           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 
-SRCS	=	main.c	\
+SRCS	=	./srcs/so_long.c	\
 			./srcs/key_hook.c	\
 			./srcs/error_message.c\
 			./srcs/actions.c	\
 			./srcs/drawing.c	\
-			./bonus/printer_clear.c	\
+			./srcs/render_map.c	\
+			./srcs/init_images.c	\
+			./bonus/printer_ascii.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
