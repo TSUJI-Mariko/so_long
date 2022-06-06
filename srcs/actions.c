@@ -21,17 +21,16 @@ void right(t_game *game)
    i = 0;
    if(ptr[i + 1]  != '1' && ptr[i + 1] != 'E')
    {
+       if (ptr[i + 1] == 'C')
+            game->star--;
        ptr[i] = '0';
        ptr[i + 1] = 'P';
        game->move++;
-        ft_printf("%d\n",game->move);
-        //mlx_destroy_image(game->mlx.mlx, game->person1);
-        //load_image(game, &game->person1, "./img/Mario1.xpm");
-        //mlx_clear_window(game->mlx.mlx, game->mlx.mlx_win);
+        ft_printf("steps:%d\n",game->move);
         draw(game);
    }
     
-    else if (ft_strchr(game->map, 'C') == NULL && ptr[i + 1] == 'E')
+    else if (game->star == 0 && ptr[i + 1] == 'E')
     {
         printer_clear("./bonus/clear_ascii.txt");
         exit_hook(game);
@@ -47,16 +46,18 @@ void left(t_game *game)
         i++;
    if(game->map[i - 1]  != '1' && game->map[i - 1] != 'E')
    {
+       if (game->map[i - 1] == 'C')
+            game->star--;
        game->map[i] = '0';
        game->map[i - 1] = 'P';
        game->move++;
-        ft_printf("%d\n",game->move);
+        ft_printf("steps:%d\n",game->move);
         //mlx_destroy_image(game->mlx.mlx, game->person1);
         //load_image(game, &game->person1, "./img/Mario1.xpm");
         //mlx_clear_window(game->mlx.mlx, game->mlx.mlx_win);
         draw(game);
    }
-    else if (ft_strchr(game->map, 'C') == NULL && game->map[i - 1] == 'E')
+    else if (game->star == 0 && game->map[i - 1] == 'E')
     {
         printer_clear("./bonus/clear_ascii.txt");
         exit_hook(game);
@@ -73,13 +74,15 @@ void up(t_game *game)
     if (game->map[i - game->line_char] != '1' 
         && game->map[i - game->line_char] != 'E')
     {
+        if (game->map[i - game->line_char] == 'C')
+            game->star--;
         game->map[i] = '0';
        game->map[i - game->line_char] = 'P';
        game->move++;
-       ft_printf("%d\n",game->move);
+       ft_printf("steps:%d\n",game->move);
         draw(game);
     }
-    else if(ft_strchr(game->map, 'C') == NULL 
+    else if(game->star == 0 
         && game->map[i - game->line_char] == 'E')
     {
         printer_clear("./bonus/clear_ascii.txt");
@@ -97,13 +100,15 @@ void down(t_game *game)
     if (game->map[i + game->line_char] != '1' 
         && game->map[i + game->line_char] != 'E')
     {
+        if (game->map[i + game->line_char] == 'C')
+            game->star--;
         game->map[i] = '0';
        game->map[i + game->line_char] = 'P';
        game->move++;
-        ft_printf("%d\n",game->move);
+        ft_printf("steps:%d\n",game->move);
         draw(game);
     }
-    else if (ft_strchr(game->map, 'C') == NULL 
+    else if (game->star == 0 
         && game->map[i + game->line_char] == 'E')
     {
         printer_clear("./bonus/clear_ascii.txt");

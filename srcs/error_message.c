@@ -21,9 +21,7 @@ void check_wall(char *line, char *map_all)
 	{
 		if (line[i] != '1')
 		{
-			ft_printf("%s\n", "map is'nt surrounded by walls '1'");
-			free(map_all);
-			exit(1);
+			error_message("map is'nt surrounded by walls", map_all);
 		}
 		i++;
 	}
@@ -37,9 +35,9 @@ void	check_elements(char *map_all)
 	p = 0;
 	while (map_all[i])
 	{
-		if (map_all[i] != '1' && map_all[i] != '0' &&
-			map_all[i] != 'E' && map_all[i] != 'P'
-			&& map_all[i] != 'C')
+		if (map_all[i] != '1' && map_all[i] != '0' 
+            && map_all[i] != 'E' && map_all[i] != 'P'
+			&& map_all[i] != 'C' && map_all[i] != 'X')
 			error_message("there is another word", map_all);
 		else if (map_all[i] == 'P')
 			p++;
@@ -52,7 +50,36 @@ void	check_elements(char *map_all)
 
 void    error_message(char *message, char *map)
 {
-    ft_putstr_fd(message, 2);
+    ft_printf("%s\n", message);
     free(map);
     exit(1);
+}
+
+void checker_enemy(t_game *game)
+{
+	int i;
+
+	i = 0;
+	while (i < ASSETS)
+	{
+		if (game->asset->enemy[i] == NULL)
+			error_message("enemy image not loaded!", game->map);
+		i++;
+	}
+}
+
+void    free_asset(t_game *game)
+{
+    mlx_destroy_image(game->mlx.mlx, game->home);
+    mlx_destroy_image(game->mlx.mlx, game->back);
+    mlx_destroy_image(game->mlx.mlx, game->wall);
+    mlx_destroy_image(game->mlx.mlx, game->collect);
+    /*mlx_destroy_image(game->mlx.mlx, game->person1);    
+    mlx_destroy_image(game->mlx.mlx, game->person2);
+    mlx_destroy_image(game->mlx.mlx, game->person3);
+    mlx_destroy_image(game->mlx.mlx, game->person4);
+    mlx_destroy_image(game->mlx.mlx, game->enemy1);
+    mlx_destroy_image(game->mlx.mlx, game->enemy2);
+    mlx_destroy_image(game->mlx.mlx, game->enemy3);
+    mlx_destroy_image(game->mlx.mlx, game->enemy4);*/    
 }

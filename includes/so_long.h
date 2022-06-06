@@ -14,6 +14,8 @@
 # define SO_LONG_H
 # define HEIGHT 400
 # define WIDTH 2000
+# define ASSETS 4
+# define ERROR 1
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -26,6 +28,15 @@ typedef struct s_mlx
     t_img   *mlx_img;
 } t_mlx;
 
+typedef struct s_asset
+{
+    t_img   **enemy;
+    t_img   *player1;
+    t_img   *player2;
+    t_img   *player3;
+    t_img   *player4;
+    int enemy_img;
+} t_asset;
 
 typedef struct s_game
 {
@@ -40,16 +51,18 @@ typedef struct s_game
     int x;
     int y;
     int move;
+    int star;
     char *map;
     t_img   img;
-    t_img   player;
     t_img   *home;
     t_img   *back;
     t_img   *wall;
     t_img   *collect;
-    t_img   *person1;
-    t_img   ground;
+    t_img   *player1;
+    t_asset *asset;
 } t_game;
+
+
 
 
 //key_hook
@@ -61,6 +74,9 @@ int	reduce_window(t_game *game);
 void    error_message(char *message, char *map);
 void check_wall(char *line, char *map_all);
 void	check_elements(char *map_all);
+void    free_asset(t_game *game);
+void checker_enemy(t_game *game);
+
 //actions
 void right(t_game *game);
 void left(t_game *game);
@@ -70,6 +86,10 @@ void down(t_game *game);
 //load_image
 void	load_image(t_game *game, t_img **image, char *filename);
 void	image_setting(t_game *game);
+//void	player_setting(t_game *game);
+void	player_setting(t_game *game);
+void	enemy_setting(t_game *game);
+
 //drawing
 void draw(t_game *game);
 void draw_one_image(t_game *game, t_img *image, int x, int y);
@@ -77,6 +97,7 @@ void draw_pixel(t_img *mlx_img, int x, int y, int color);
 unsigned int rgb_to_int(int o, int r, int g, int b);
 unsigned int get_pixel(t_img *img, int x, int y);
 void checker_image(char c, t_game *game);
+void destroy_enemy(t_game *game);
 
 //bonus
 void printer_clear(char *filename);

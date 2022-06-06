@@ -13,7 +13,6 @@
 NAME	=	so_long
 
 SRCS	=	main.c	\
-			create_trgb.c	\
 			./srcs/key_hook.c	\
 			./srcs/error_message.c\
 			./srcs/actions.c	\

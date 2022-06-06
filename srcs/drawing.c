@@ -52,7 +52,9 @@ void draw_one_image(t_game *game, t_img *image, int x, int y)
 		}
 		j++;
 	}
+	//mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, image, i, j);
 }
+
 
 void checker_image(char c, t_game *game)
 {
@@ -63,7 +65,9 @@ void checker_image(char c, t_game *game)
 	else if (c == 'C')
 		draw_one_image(game, game->collect, game->x, game->y * 31);
 	else if (c == 'P')
-		draw_one_image(game, game->person1, game->x, game->y * 31);    
+		draw_one_image(game, game->player1, game->x, game->y * 31);  
+	else if (c == 'X')  
+		draw_one_image(game, game->asset->enemy[game->asset->enemy_img], game->x, game->y * 31);
 }
 
 void draw(t_game *game)
@@ -94,6 +98,19 @@ void draw(t_game *game)
 	mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->mlx.mlx_img, 0, 0);
 }
 
+
+void destroy_enemy(t_game *game)
+{
+	int i;
+
+	i = 0;
+	while (i < ASSETS)
+	{
+		mlx_destroy_image(game->mlx.mlx, game->asset->enemy[i]);
+		i++;
+	}
+	free(game->asset->enemy);
+}
 
 /*
 void draw(t_game *game)

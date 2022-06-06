@@ -24,21 +24,13 @@ void	deal_line(int ret, char *line, t_game *game, char *map_all)
 		game->line_num++;
 		game->line_end = ft_strlen(line) - 1;
 		if (line[0] != '1' ||line[game->line_end] != '1')
-		{
-			ft_putstr_fd("wall is not surrounded by wall '1'", 2);
-			free(map_all);
-			exit(1);
-		}
+			error_message("wall is not surrounded by wall '1'", map_all);
 		ft_strcat(map_all, line);
 		free(line);
 		line = 0;
 		ret = get_next_line(game->fd, &line);
 		if ((ret != 0) && ft_strlen(line) != game->line_char)
-		{
-			ft_putstr_fd("error", 2);
-			free(map_all);
-			exit(1);
-		}
+			error_message("mapping_error", map_all);
 		
 	}
 	if (ret == 0)
@@ -49,7 +41,6 @@ void	deal_line(int ret, char *line, t_game *game, char *map_all)
 		free(line);
 		line = 0;
 	}
-	//free(map_all);
 }
 
 char init_map(t_game *game, char *map)
@@ -93,21 +84,56 @@ void	image_setting(t_game *game)
 	load_image(game, &game->back, "./img/ground_blue.xpm");
 	load_image(game, &game->wall, "./img/tile.xpm");
 	load_image(game, &game->collect, "./img/star.xpm");
-	load_image(game, &game->person1, "./img/Mario1.xpm");
+	load_image(game, &game->player1, "./img/Mario1.xpm");
+	
+}
+/*void	player_setting(t_game *game)
+{
+	int width;
+	int height;
+	player->player1 = mlx_xpm_file_to_image(game->mlx.mlx, "./img/Mario1.xpm", &width, &height);
+	player->player1->height = height;
+	player->player1->width = width;
+	//load_image(game, &game->asset->player2, "./img/Mario2.xpm");
+	//load_image(game, &game->asset->player3, "./img/Mario3.xpm");
+	//load_image(game, &game->asset->player4, "./img/Mario4.xpm");
+}*/
+
+void	enemy_setting(t_game *game)
+{
+	game->asset->enemy = malloc(ASSETS * sizeof(void *));
+	game->asset->enemy_img = 0;
+	load_image(game, &game->asset->enemy[0], "./img/cactus1.xpm");
+	load_image(game, &game->asset->enemy[1], "./img/cactus2.xpm");
+	load_image(game, &game->asset->enemy[2], "./img/cactus3.xpm");
+	load_image(game, &game->asset->enemy[3], "./img/cactus4.xpm");
 }
 
 int	init_structure(t_game *game)
 {
+	int i;
+
+	game->star = 0;
+    i = 0;
+    while (game->map[i])
+    {
+        if (game->map[i] == 'C')
+            game->star++;
+        i++;
+    }
 	game->mlx.mlx = mlx_init();
 	game->mlx.mlx_win = mlx_new_window(game->mlx.mlx, game->map_width, game->map_height, "So_long"); 
 	game->mlx.mlx_img = mlx_new_image(game->mlx.mlx, game->map_width, game->map_height);
 	image_setting(game);
+	//player_setting(game);
+	//enemy_setting(game);
 	return (1);
 }
 
 int main(int argc, char **argv)
 {
 	t_game game;
+	//t_asset asset;
 	//void *mlx_new;
 	//void *mlx_win;
 

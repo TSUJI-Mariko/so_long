@@ -15,7 +15,8 @@
 int exit_hook(t_game *game)
 {
     free(game->map);
-    exit(1);
+    free_asset(game);
+    exit(0);
 }
 
 int	reduce_window(t_game *game)
@@ -36,9 +37,5 @@ int key_hook(int keycord, t_game *game)
         up(game);
     if (keycord == 0x73)
         down(game);
-
-    //else
-    //    mlx_clear_window(game->mlx.mlx, game->mlx.mlx_win);
-    //draw(game);
     return (1);
 }
