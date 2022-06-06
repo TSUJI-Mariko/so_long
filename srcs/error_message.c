@@ -54,7 +54,7 @@ void    error_message(char *message, char *map)
     free(map);
     exit(1);
 }
-
+/*
 void checker_enemy(t_game *game)
 {
 	int i;
@@ -67,19 +67,19 @@ void checker_enemy(t_game *game)
 		i++;
 	}
 }
-
+*/
 void    free_asset(t_game *game)
 {
     mlx_destroy_image(game->mlx.mlx, game->home);
     mlx_destroy_image(game->mlx.mlx, game->back);
     mlx_destroy_image(game->mlx.mlx, game->wall);
     mlx_destroy_image(game->mlx.mlx, game->collect);
-    /*mlx_destroy_image(game->mlx.mlx, game->person1);    
-    mlx_destroy_image(game->mlx.mlx, game->person2);
-    mlx_destroy_image(game->mlx.mlx, game->person3);
-    mlx_destroy_image(game->mlx.mlx, game->person4);
-    mlx_destroy_image(game->mlx.mlx, game->enemy1);
-    mlx_destroy_image(game->mlx.mlx, game->enemy2);
-    mlx_destroy_image(game->mlx.mlx, game->enemy3);
-    mlx_destroy_image(game->mlx.mlx, game->enemy4);*/    
+	mlx_destroy_image(game->mlx.mlx, game->asset.player1);    
+    mlx_destroy_image(game->mlx.mlx, game->asset.player2);
+	mlx_destroy_image(game->mlx.mlx, game->asset.player3);
+	mlx_destroy_image(game->mlx.mlx, game->asset.player4);
+    mlx_destroy_image(game->mlx.mlx, game->asset.enemy1);
+    mlx_destroy_image(game->mlx.mlx, game->asset.enemy2);
+    mlx_destroy_image(game->mlx.mlx, game->asset.enemy3);
+    mlx_destroy_image(game->mlx.mlx, game->asset.enemy4);    
 }

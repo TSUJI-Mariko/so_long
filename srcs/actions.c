@@ -23,19 +23,25 @@ void right(t_game *game)
    {
        if (ptr[i + 1] == 'C')
             game->star--;
+        if (ptr[i + 1] == 'X')
+        {
+            printer_ascii("./bonus/game_over_ascii.txt");
+            exit_hook(game);
+        }
        ptr[i] = '0';
        ptr[i + 1] = 'P';
        game->move++;
         ft_printf("steps:%d\n",game->move);
         draw(game);
    }
-    
-    else if (game->star == 0 && ptr[i + 1] == 'E')
+
+    if (game->star == 0 && ptr[i + 1] == 'E')
     {
-        printer_clear("./bonus/clear_ascii.txt");
+        printer_ascii("./bonus/clear_ascii.txt");
         exit_hook(game);
     }
 }
+   
 
 void left(t_game *game)
 {
@@ -48,6 +54,11 @@ void left(t_game *game)
    {
        if (game->map[i - 1] == 'C')
             game->star--;
+        if (game->map[i - 1] == 'X')
+        {
+            printer_ascii("./bonus/game_over_ascii.txt");
+            exit_hook(game);
+        }
        game->map[i] = '0';
        game->map[i - 1] = 'P';
        game->move++;
@@ -57,11 +68,13 @@ void left(t_game *game)
         //mlx_clear_window(game->mlx.mlx, game->mlx.mlx_win);
         draw(game);
    }
-    else if (game->star == 0 && game->map[i - 1] == 'E')
+   
+    if (game->star == 0 && game->map[i - 1] == 'E')
     {
-        printer_clear("./bonus/clear_ascii.txt");
+        printer_ascii("./bonus/clear_ascii.txt");
         exit_hook(game);
     }
+
 }
 
 void up(t_game *game)
@@ -76,18 +89,25 @@ void up(t_game *game)
     {
         if (game->map[i - game->line_char] == 'C')
             game->star--;
+        if (game->map[i - game->line_char] == 'X')
+        {
+            printer_ascii("./bonus/game_over_ascii.txt");
+            exit_hook(game);
+        }
         game->map[i] = '0';
        game->map[i - game->line_char] = 'P';
        game->move++;
        ft_printf("steps:%d\n",game->move);
         draw(game);
     }
-    else if(game->star == 0 
+    
+    if(game->star == 0 
         && game->map[i - game->line_char] == 'E')
     {
-        printer_clear("./bonus/clear_ascii.txt");
+        printer_ascii("./bonus/clear_ascii.txt");
         exit_hook(game);
     }
+
 }
 
 void down(t_game *game)
@@ -102,16 +122,23 @@ void down(t_game *game)
     {
         if (game->map[i + game->line_char] == 'C')
             game->star--;
+        if (game->map[i + game->line_char] == 'X')
+        {
+             printer_ascii("./bonus/game_over_ascii.txt");
+             exit_hook(game);
+        }
         game->map[i] = '0';
        game->map[i + game->line_char] = 'P';
        game->move++;
         ft_printf("steps:%d\n",game->move);
         draw(game);
     }
+    
     else if (game->star == 0 
         && game->map[i + game->line_char] == 'E')
     {
-        printer_clear("./bonus/clear_ascii.txt");
+        printer_ascii("./bonus/clear_ascii.txt");
         exit_hook(game);
     }
+
 }

@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void printer_clear(char *filename)
+void printer_ascii(char *filename)
 {
     int fd;
     char *line;

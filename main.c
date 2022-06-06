@@ -84,29 +84,24 @@ void	image_setting(t_game *game)
 	load_image(game, &game->back, "./img/ground_blue.xpm");
 	load_image(game, &game->wall, "./img/tile.xpm");
 	load_image(game, &game->collect, "./img/star.xpm");
-	load_image(game, &game->player1, "./img/Mario1.xpm");
-	
 }
-/*void	player_setting(t_game *game)
+
+void	player_setting(t_game *game)
 {
-	int width;
-	int height;
-	player->player1 = mlx_xpm_file_to_image(game->mlx.mlx, "./img/Mario1.xpm", &width, &height);
-	player->player1->height = height;
-	player->player1->width = width;
-	//load_image(game, &game->asset->player2, "./img/Mario2.xpm");
-	//load_image(game, &game->asset->player3, "./img/Mario3.xpm");
-	//load_image(game, &game->asset->player4, "./img/Mario4.xpm");
-}*/
+	game->player_count = 0;
+	load_image(game, &game->asset.player1, "./img/Mario1.xpm");
+	load_image(game, &game->asset.player2, "./img/Mario2.xpm");
+	load_image(game, &game->asset.player3, "./img/Mario3.xpm");
+	load_image(game, &game->asset.player4, "./img/Mario4.xpm");
+}
 
 void	enemy_setting(t_game *game)
 {
-	game->asset->enemy = malloc(ASSETS * sizeof(void *));
-	game->asset->enemy_img = 0;
-	load_image(game, &game->asset->enemy[0], "./img/cactus1.xpm");
-	load_image(game, &game->asset->enemy[1], "./img/cactus2.xpm");
-	load_image(game, &game->asset->enemy[2], "./img/cactus3.xpm");
-	load_image(game, &game->asset->enemy[3], "./img/cactus4.xpm");
+	game->enemy_count = 0;
+	load_image(game, &game->asset.enemy1, "./img/cactus1.xpm");
+	load_image(game, &game->asset.enemy2, "./img/cactus2.xpm");
+	load_image(game, &game->asset.enemy3, "./img/cactus3.xpm");
+	load_image(game, &game->asset.enemy4, "./img/cactus4.xpm");
 }
 
 int	init_structure(t_game *game)
@@ -125,8 +120,8 @@ int	init_structure(t_game *game)
 	game->mlx.mlx_win = mlx_new_window(game->mlx.mlx, game->map_width, game->map_height, "So_long"); 
 	game->mlx.mlx_img = mlx_new_image(game->mlx.mlx, game->map_width, game->map_height);
 	image_setting(game);
-	//player_setting(game);
-	//enemy_setting(game);
+	player_setting(game);
+	enemy_setting(game);
 	return (1);
 }
 

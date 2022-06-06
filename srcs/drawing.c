@@ -29,7 +29,7 @@ void draw_pixel(t_img *mlx_img, int x, int y, int color)
 	*(unsigned int *)target = color;
 }
 
-void draw_one_image(t_game *game, t_img *image, int x, int y)
+/*void draw_one_image(t_game *game, t_img *image, int x, int y)
 {
 	unsigned int color;
 	int i;
@@ -52,9 +52,12 @@ void draw_one_image(t_game *game, t_img *image, int x, int y)
 		}
 		j++;
 	}
-	//mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, image, i, j);
+	//mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, image, x, y);
+}*/
+/*void draw_one_image(t_game *game, t_img *image, int x, int y)
+{
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, image, x * 32, y * 32);
 }
-
 
 void checker_image(char c, t_game *game)
 {
@@ -68,8 +71,27 @@ void checker_image(char c, t_game *game)
 		draw_one_image(game, game->player1, game->x, game->y * 31);  
 	else if (c == 'X')  
 		draw_one_image(game, game->asset->enemy[game->asset->enemy_img], game->x, game->y * 31);
+}*/
+void checker_image(char c, t_game *game)
+{
+    //if (c == '0')
+		//draw_one_image(game, game->back, game->x, game->y * 31);
+	if (c == 'E')
+		mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, 
+		game->home, game->x * 32, game->y * 32);
+	else if (c == 'C')
+		mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, 
+		game->collect, game->x * 32, game->y * 32);
+	else if (c == 'P')
+		mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, 
+		game->asset.player1, game->x * 32, game->y * 32);
+	else if (c == 'X')  
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, 
+		game->asset.enemy1, game->x * 32, game->y * 32);
 }
 
+
+/*
 void draw(t_game *game)
 {
 	int z;
@@ -95,10 +117,35 @@ void draw(t_game *game)
 		game->y++;
 		game->number = game->y * game->line_char;
 	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->mlx.mlx_img, 0, 0);
+	//mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->mlx.mlx_img, 0, 0);
+}*/
+void draw(t_game *game)
+{
+	game->y = 0;
+	game->number = 0;
+	while (game->y < (game->line_num - 1))
+	{
+		game->x = 0;
+		while (game->x < game->line_char)	
+		{
+			if (game->map[game->x + game->number] == '1')
+			{
+				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, 
+			game->wall, game->x * 32, game->y * 32);
+			}
+			else 
+				mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, 
+				game->back, game->x * 32, game->y * 32);
+                checker_image(game->map[game->x + game->number], game);
+			game->x++;
+		}
+		game->y++;
+		game->number = game->y * game->line_char;
+	}
+	//mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win, game->mlx.mlx_img, 0, 0);
 }
 
-
+/*
 void destroy_enemy(t_game *game)
 {
 	int i;
@@ -111,7 +158,7 @@ void destroy_enemy(t_game *game)
 	}
 	free(game->asset->enemy);
 }
-
+*/
 /*
 void draw(t_game *game)
 {

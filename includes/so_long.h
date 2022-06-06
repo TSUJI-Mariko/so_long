@@ -30,7 +30,10 @@ typedef struct s_mlx
 
 typedef struct s_asset
 {
-    t_img   **enemy;
+    t_img   *enemy1;
+    t_img   *enemy2;
+    t_img   *enemy3;
+    t_img   *enemy4;
     t_img   *player1;
     t_img   *player2;
     t_img   *player3;
@@ -52,14 +55,17 @@ typedef struct s_game
     int y;
     int move;
     int star;
+    int enemy_count;
+    int player_count;
     char *map;
     t_img   img;
     t_img   *home;
     t_img   *back;
     t_img   *wall;
     t_img   *collect;
-    t_img   *player1;
-    t_asset *asset;
+    t_img   *player;
+    t_img   **enemy;
+    t_asset asset;
 } t_game;
 
 
@@ -100,5 +106,5 @@ void checker_image(char c, t_game *game);
 void destroy_enemy(t_game *game);
 
 //bonus
-void printer_clear(char *filename);
+void printer_ascii(char *filename);
 #endif
