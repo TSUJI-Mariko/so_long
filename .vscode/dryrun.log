@@ -1,15 +1,18 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/tj/Documents/42/so_long'
-gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c main.c -o main.o
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/so_long.c -o srcs/so_long.o
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/key_hook.c -o srcs/key_hook.o
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/error_message.c -o srcs/error_message.o
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/actions.c -o srcs/actions.o
 gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/drawing.c -o srcs/drawing.o
-gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c bonus/printer_clear.c -o bonus/printer_clear.o
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/render_map.c -o srcs/render_map.o
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c srcs/init_images.c -o srcs/init_images.o
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c bonus/printer_ascii.c -o bonus/printer_ascii.o
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  -I./includes/ -I./libft/  -c bonus/action_enemy.c -o bonus/action_enemy.o
 make -C ./minilibx-linux/
 make -C ./libft/
-ar rcs ./libft/libft.a main.o ./srcs/key_hook.o ./srcs/error_message.o ./srcs/actions.o ./srcs/drawing.o ./bonus/printer_clear.o
+ar rcs ./libft/libft.a ./srcs/so_long.o ./srcs/key_hook.o ./srcs/error_message.o ./srcs/actions.o ./srcs/drawing.o ./srcs/render_map.o ./srcs/init_images.o ./bonus/printer_ascii.o ./bonus/action_enemy.o
 ranlib ./libft/libft.a
-gcc -Wall -Wextra -Werror -g3 -fsanitize=address  main.o ./srcs/key_hook.o ./srcs/error_message.o ./srcs/actions.o ./srcs/drawing.o ./bonus/printer_clear.o -Lminilibx-linux  -lmlx -lz -lXext -lX11 ./libft/libft.a -o so_long
+gcc -Wall -Wextra -Werror -g3 -fsanitize=address  ./srcs/so_long.o ./srcs/key_hook.o ./srcs/error_message.o ./srcs/actions.o ./srcs/drawing.o ./srcs/render_map.o ./srcs/init_images.o ./bonus/printer_ascii.o ./bonus/action_enemy.o -Lminilibx-linux  -lmlx -lz -lXext -lX11 ./libft/libft.a -o so_long
 make: Leaving directory '/home/tj/Documents/42/so_long'
  

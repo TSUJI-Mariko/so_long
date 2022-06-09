@@ -19,10 +19,19 @@ int	exit_hook(t_game *game)
 	exit(0);
 }
 
-int	reduce_window(t_game *game)
+int render(t_game *game)
 {
-	draw(game);
-	return (1);
+	int render;
+
+	render = 10000;
+	if (render == 10000)
+	{
+		draw(game); 
+		render = 0;
+	}
+	else
+		render++;
+	return (0);
 }
 
 int	key_hook(int keycord, t_game *game)

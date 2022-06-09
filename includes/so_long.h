@@ -98,9 +98,12 @@ void	draw(t_game *game);
 void	draw_one_image(t_game *game, t_img *image, int x, int y);
 void	draw_pixel(t_img *mlx_img, int x, int y, int color);
 void	checker_image(char c, t_game *game);
+int render(t_game *game);
 //bonus
 void	destroy_enemy(t_game *game);
 void	printer_ascii(char *filename);
 void	game_clear(t_game *game);
 void	game_over(t_game *game);
+void    action_enemy(t_game *game);
+void act_counter(t_game *game);
 #endif

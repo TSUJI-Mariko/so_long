@@ -24,14 +24,14 @@ void	checker_image(char c, t_game *game)
 		mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win,
 			game->asset.player1, game->x * 32, game->y * 32);
 	else if (c == 'X')
-		mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win,
-			game->asset.enemy1, game->x * 32, game->y * 32);
+		action_enemy(game);
 }
 
 void	draw(t_game *game)
 {
 	game->y = 0;
 	game->number = 0;
+	act_counter(game);
 	while (game->y < (game->line_num - 1))
 	{
 		game->x = 0;

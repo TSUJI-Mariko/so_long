@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun  6 20:44:22 2022
+# Make data base, printed on Thu Jun  9 17:01:35 2022
 
 # Variables
 
@@ -32,7 +32,7 @@ VSCODE_LOG_NATIVE = false
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
 IM_CONFIG_PHASE = 1
-# makefile (from 'Makefile', line 26)
+# makefile (from 'Makefile', line 29)
 LIB_LINUX = -Lminilibx-linux  -lmlx -lz -lXext -lX11
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
@@ -46,16 +46,16 @@ XMODIFIERS = @im=ibus
 CURDIR := /home/tj/Documents/42/so_long
 # makefile
 SHELL = /bin/sh
-# makefile (from 'Makefile', line 36)
+# makefile (from 'Makefile', line 39)
 RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"f5b8523d60216379ef9ba6dc243eb093.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /usr/share/code/code
-# makefile (from 'Makefile', line 38)
+_ = /usr/bin/dbus-update-activation-environment
+# makefile (from 'Makefile', line 41)
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address 
 # environment
-JOURNAL_STREAM = 8:52696
+JOURNAL_STREAM = 8:45038
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -74,12 +74,12 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 22)
+# makefile (from 'Makefile', line 25)
 OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2506
+MANAGERPID = 2078
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-eb367d49-c58e-424c-a50d-75f14932da71.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-14bf4a9a-0301-499a-8d67-2f952c72d9cb.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -93,9 +93,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2723,unix/tj-MacBookPro:/tmp/.ICE-unix/2723
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2301,unix/tj-MacBookPro:/tmp/.ICE-unix/2301
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -105,17 +103,15 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 2b04bd4feb7048c0bb06f0a355f148c1
+INVOCATION_ID = 00621d58e15844a4b058fac6ee731342
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4709
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3530
 # automatic
 %F = $(notdir $%)
 # environment
@@ -127,7 +123,7 @@ PWD = /home/tj/Documents/42/so_long
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2686
+SSH_AGENT_PID = 2261
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -145,8 +141,6 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
-ZSH = /home/tj/.oh-my-zsh
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -161,12 +155,12 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'Makefile', line 15)
-SRCS = main.c ./srcs/key_hook.c ./srcs/error_message.c ./srcs/actions.c ./srcs/drawing.c ./bonus/printer_clear.c 
+SRCS = ./srcs/so_long.c ./srcs/key_hook.c ./srcs/error_message.c ./srcs/actions.c ./srcs/drawing.c ./srcs/render_map.c ./srcs/init_images.c ./bonus/printer_ascii.c ./bonus/action_enemy.c 
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 30)
+# makefile (from 'Makefile', line 33)
 LIBFT = ./libft/
-# makefile (from 'Makefile', line 34)
+# makefile (from 'Makefile', line 37)
 CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
@@ -182,16 +176,12 @@ LC_MONETARY = fr_FR.UTF-8
 XDG_CURRENT_DESKTOP = Unity
 # makefile (from 'Makefile', line 13)
 NAME = so_long
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/tj
 # default
 .VARIABLES := 
 # automatic
@@ -206,17 +196,15 @@ MAKEFLAGS = pqrR
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-MAIL = tj@student.42.fr
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
-# makefile (from 'Makefile', line 32)
+# makefile (from 'Makefile', line 35)
 LIBFT_A = ./libft/libft.a
 # environment
 LC_PAPER = fr_FR.UTF-8
-# makefile (from 'Makefile', line 28)
+# makefile (from 'Makefile', line 31)
 MLX_LINUX = ./minilibx-linux/
 # environment
 QT_ACCESSIBILITY = 1
@@ -229,10 +217,8 @@ LC_NUMERIC = fr_FR.UTF-8
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-PAGER = less
-# environment
 LC_ALL = C
-# makefile (from 'Makefile', line 24)
+# makefile (from 'Makefile', line 27)
 HEADER = ./includes/
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
@@ -255,9 +241,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4709
+VSCODE_PID = 3530
 # variable set hash-table stats:
-# Load=123/1024=12%, Rehash=0, Collisions=19/153=12%
+# Load=116/1024=11%, Rehash=0, Collisions=19/146=13%
 
 # Pattern-specific Variable Values
 
@@ -265,9 +251,9 @@ VSCODE_PID = 4709
 
 # Directories
 
-# . (device 2050, inode 14683888): 16 files, no impossibilities.
+# . (device 2050, inode 14683888): 13 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -291,21 +277,29 @@ all: so_long
 # Not a target:
 libft/:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:37.099494949
+#  Last modified 2022-06-09 10:49:44.001033046
+ 
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/init_images.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:49:38.377188048
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-05 17:51:41.721503767
+#  Last modified 2022-06-09 10:31:46.662948234
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-bonus/printer_clear.o:
+srcs/so_long.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:32.231609588
+#  Last modified 2022-06-09 10:49:37.657207893
 #  File has been updated.
 #  Successfully updated.
 
@@ -313,8 +307,7 @@ bonus/printer_clear.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 44):
 	$(CC) $(CFLAGS) -I$(HEADER) -I$(LIBFT) $(LIB) -c $< -o $(<:.c=.o)
 
 fclean: clean
@@ -322,14 +315,28 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 61):
 		$(MAKE) fclean -C $(LIBFT)
 		$(RM) $(NAME)
 
 # Not a target:
 srcs/actions.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:31.999615051
+#  Last modified 2022-06-09 10:49:38.013198081
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/render_map.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:49:38.257191355
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+bonus/printer_ascii.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 10:49:38.485185072
 #  File has been updated.
 #  Successfully updated.
 
@@ -342,7 +349,7 @@ srcs/actions.o:
 # Not a target:
 srcs/error_message.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:31.835618912
+#  Last modified 2022-06-09 10:49:37.885201609
 #  File has been updated.
 #  Successfully updated.
 
@@ -357,31 +364,31 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 53):
+#  recipe to execute (from 'Makefile', line 56):
 		$(MAKE) clean -C $(LIBFT)
 		$(MAKE) clean -C $(MLX_LINUX)
 		$(RM) $(OBJS)
 
 # Not a target:
-srcs/key_hook.o:
+bonus/action_enemy.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:31.715621738
+#  Last modified 2022-06-09 10:49:38.609181654
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-main.o:
+srcs/key_hook.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:31.619623998
+#  Last modified 2022-06-09 10:49:37.761205026
 #  File has been updated.
 #  Successfully updated.
 
-so_long: main.o srcs/key_hook.o srcs/error_message.o srcs/actions.o srcs/drawing.o bonus/printer_clear.o libft/
+so_long: srcs/so_long.o srcs/key_hook.o srcs/error_message.o srcs/actions.o srcs/drawing.o srcs/render_map.o srcs/init_images.o bonus/printer_ascii.o bonus/action_enemy.o libft/
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-06 16:28:37.183492971
+#  Last modified 2022-06-09 10:49:44.105030179
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 44):
+#  recipe to execute (from 'Makefile', line 47):
 			@make -C $(MLX_LINUX)
 			@make -C $(LIBFT)
 			ar rcs $(LIBFT_A) $(OBJS)
@@ -391,24 +398,24 @@ so_long: main.o srcs/key_hook.o srcs/error_message.o srcs/actions.o srcs/drawing
 # Not a target:
 srcs/drawing.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:28:32.127612037
+#  Last modified 2022-06-09 10:49:38.137194663
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/43=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/49=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 286 B / avg = 8 B
-# current buf: size = 8162 B / used = 286 B / count = 32 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 336 B / avg = 10 B
+# current buf: size = 8162 B / used = 336 B / count = 33 / avg = 10 B
 
-# strcache performance: lookups = 54 / hit rate = 40%
+# strcache performance: lookups = 54 / hit rate = 38%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/54=2%
-# Finished Make data base on Mon Jun  6 20:44:22 2022
+# Load=33/8192=0%, Rehash=0, Collisions=1/54=2%
+# Finished Make data base on Thu Jun  9 17:01:35 2022
 
  

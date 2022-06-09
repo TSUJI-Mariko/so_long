@@ -44,9 +44,8 @@ int main(int argc, char **argv)
 		return (0);
 	init_map(&game, argv[1]);
 	init_structure(&game);
-	draw(&game);
-	//right(&game);
-//	mlx_pixel_put(game.mlx.mlx, game.mlx.mlx_win, 100, 100, 0xFFFFFF);
+	//draw(&game);
+	mlx_loop_hook(game.mlx.mlx, render, &game);
 	mlx_key_hook(game.mlx.mlx_win, key_hook, &game);
 	mlx_hook(game.mlx.mlx_win, 17, 1L << 0, exit_hook, &game); 
 	//mlx_hook(game.mlx.mlx_win, 15, 1L << 16, reduce_window, &game);

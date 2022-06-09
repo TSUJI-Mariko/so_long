@@ -20,6 +20,7 @@ SRCS	=	./srcs/so_long.c	\
 			./srcs/render_map.c	\
 			./srcs/init_images.c	\
 			./bonus/printer_ascii.c	\
+			./bonus/action_enemy.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
