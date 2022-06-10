@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:47:57 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/06 23:03:31 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/06/10 17:05:00 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define WIDTH 2000
 # define ASSETS 4
 # define ERROR 1
+# define RENDER 10000
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -78,7 +79,7 @@ void	error_message(char *message, char *map);
 void	check_wall(char *line, char *map_all);
 void	check_elements(char *map_all);
 void	free_asset(t_game *game);
-void	checker_enemy(t_game *game);
+void	checker_enemy(t_img **enemy, t_game *game);
 //action
 void	right(t_game *game);
 void	left(t_game *game);
@@ -98,12 +99,12 @@ void	draw(t_game *game);
 void	draw_one_image(t_game *game, t_img *image, int x, int y);
 void	draw_pixel(t_img *mlx_img, int x, int y, int color);
 void	checker_image(char c, t_game *game);
-int render(t_game *game);
+int		render(t_game *game);
 //bonus
 void	destroy_enemy(t_game *game);
 void	printer_ascii(char *filename);
 void	game_clear(t_game *game);
 void	game_over(t_game *game);
-void    action_enemy(t_game *game);
-void act_counter(t_game *game);
+void	action_enemy(t_game *game);
+void	act_counter(t_game *game);
 #endif

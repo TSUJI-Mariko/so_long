@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:58:45 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/06 22:34:01 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/06/10 16:56:34 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	check_wall(char *line, char *map_all)
 	while (line[i])
 	{
 		if (line[i] != '1')
-		{
 			error_message("map is'nt surrounded by walls", map_all);
-		}
 		i++;
 	}
 }
@@ -54,37 +52,6 @@ void	error_message(char *message, char *map)
 	free(map);
 	exit(1);
 }
-/*
-void	checker_enemy(t_game *game)
-{
-	int i;
-
-	i = 0;
-	while (i < ASSETS)
-	{
-		if (game->asset->enemy[i] == NULL)
-			error_message("enemy image not loaded!", game->map);
-		i++;
-	}
-}
-
-
-void	free_asset(t_game *game)
-{
-	mlx_destroy_image(game->mlx.mlx, game->home);
-	mlx_destroy_image(game->mlx.mlx, game->back);
-	mlx_destroy_image(game->mlx.mlx, game->wall);
-	mlx_destroy_image(game->mlx.mlx, game->collect);
-	mlx_destroy_image(game->mlx.mlx, game->asset.player1);
-	//mlx_destroy_image(game->mlx.mlx, game->asset.player2);
-	//mlx_destroy_image(game->mlx.mlx, game->asset.player3);
-	//mlx_destroy_image(game->mlx.mlx, game->asset.player4);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy1);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy2);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy3);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy4);
-}
-*/
 
 void	free_asset(t_game *game)
 {

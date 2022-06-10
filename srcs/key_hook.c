@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:46:42 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/06 22:35:12 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/06/10 16:57:11 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int	exit_hook(t_game *game)
 	exit(0);
 }
 
-int render(t_game *game)
+int	render(t_game *game)
 {
-	int render;
+	int	render;
 
-	render = 10000;
-	if (render == 10000)
+	render = RENDER;
+	if (render == RENDER)
 	{
-		draw(game); 
+		draw(game);
 		render = 0;
 	}
 	else
 		render++;
-	return (0);
+	return (1);
 }
 
 int	key_hook(int keycord, t_game *game)

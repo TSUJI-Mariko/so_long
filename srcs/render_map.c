@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 22:35:59 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/06 22:40:10 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/06/10 16:55:35 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init_map2(t_game *game, char *map_all)
 {
-	if ( ft_strchr(map_all, 'E') == NULL
+	if (ft_strchr(map_all, 'E') == NULL
 		|| ft_strchr(map_all, 'P') == NULL
 		|| ft_strchr(map_all, 'C') == NULL )
 		error_message("not E,P or C", map_all);
@@ -30,12 +30,11 @@ void	init_map2(t_game *game, char *map_all)
 
 void	deal_line(int ret, char *line, t_game *game, char *map_all)
 {
-
 	while (ret > 0)
 	{
 		game->line_num++;
 		game->line_end = ft_strlen(line) - 1;
-		if (line[0] != '1' ||line[game->line_end] != '1')
+		if (line[0] != '1' || line[game->line_end] != '1')
 			error_message("wall is not surrounded by wall '1'", map_all);
 		ft_strcat(map_all, line);
 		free(line);
@@ -47,7 +46,7 @@ void	deal_line(int ret, char *line, t_game *game, char *map_all)
 	if (ret == 0)
 	{
 		game->line_num++;
-		check_wall(line,map_all);
+		check_wall(line, map_all);
 		ft_strcat(map_all, line);
 		free(line);
 		line = 0;
