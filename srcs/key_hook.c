@@ -19,7 +19,7 @@ int	exit_hook(t_game *game)
 	exit(0);
 }
 
-int	render(t_game *game)
+/*int	render(t_game *game)
 {
 	int	render;
 
@@ -31,6 +31,12 @@ int	render(t_game *game)
 	}
 	else
 		render++;
+	return (1);
+}*/
+
+int	render(t_game *game)
+{
+	draw(game);
 	return (1);
 }
 

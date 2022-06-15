@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  9 19:01:34 2022
+# Make data base, printed on Wed Jun 15 11:02:53 2022
 
 # Variables
 
@@ -49,13 +49,13 @@ SHELL = /bin/sh
 # makefile (from 'Makefile', line 39)
 RM = rm -f
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"f5b8523d60216379ef9ba6dc243eb093.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"5c8c40d429ae8165ad0b13c71d693b4b.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
 # makefile (from 'Makefile', line 41)
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address 
 # environment
-JOURNAL_STREAM = 8:45038
+JOURNAL_STREAM = 8:50472
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -77,9 +77,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 25)
 OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2078
+MANAGERPID = 2107
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-97994b20-5372-4b5f-955f-295cb023d24d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-35963c66-78d2-42af-b518-a8bee6a72c77.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -95,7 +95,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2301,unix/tj-MacBookPro:/tmp/.ICE-unix/2301
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2324,unix/tj-MacBookPro:/tmp/.ICE-unix/2324
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -105,7 +105,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 00621d58e15844a4b058fac6ee731342
+INVOCATION_ID = 4d919d6cb42b4d54b11c78fc7c4026ba
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -115,7 +115,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 17900
+GIO_LAUNCHED_DESKTOP_FILE_PID = 12977
 # automatic
 %F = $(notdir $%)
 # environment
@@ -127,7 +127,7 @@ PWD = /home/tj/Documents/42/so_long
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2261
+SSH_AGENT_PID = 2285
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -137,7 +137,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/tj
 # environment
-VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 LOGNAME = tj
 # environment
@@ -199,7 +199,7 @@ OLDPWD = /home/tj
 # environment
 LANGUAGE = en_US:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.68.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -255,7 +255,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 17900
+VSCODE_PID = 12977
 # variable set hash-table stats:
 # Load=123/1024=12%, Rehash=0, Collisions=19/153=12%
 
@@ -278,6 +278,7 @@ VSCODE_PID = 17900
 all: so_long
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -291,15 +292,14 @@ all: so_long
 # Not a target:
 libft/:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-06-09 18:58:09.822262765
+#  Last modified 2022-06-13 21:43:27.712026815
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/init_images.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:05.246371917
+#  Last modified 2022-06-13 21:43:22.504198981
 #  File has been updated.
 #  Successfully updated.
 
@@ -313,7 +313,7 @@ Makefile:
 # Not a target:
 srcs/so_long.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:04.622386802
+#  Last modified 2022-06-13 21:43:21.772223215
 #  File has been updated.
 #  Successfully updated.
 
@@ -336,21 +336,21 @@ fclean: clean
 # Not a target:
 srcs/actions.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:04.930379455
+#  Last modified 2022-06-13 21:43:22.156210501
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/render_map.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:05.138374493
+#  Last modified 2022-06-13 21:43:22.388202822
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 bonus/printer_ascii.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:05.346369532
+#  Last modified 2022-06-13 21:43:22.616195274
 #  File has been updated.
 #  Successfully updated.
 
@@ -363,7 +363,7 @@ bonus/printer_ascii.o:
 # Not a target:
 srcs/error_message.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:04.814382222
+#  Last modified 2022-06-13 21:43:22.020215003
 #  File has been updated.
 #  Successfully updated.
 
@@ -386,20 +386,20 @@ clean:
 # Not a target:
 bonus/action_enemy.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:05.442367242
+#  Last modified 2022-06-13 21:43:22.724191699
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/key_hook.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:04.710384703
+#  Last modified 2022-06-13 21:43:21.908218712
 #  File has been updated.
 #  Successfully updated.
 
 so_long: srcs/so_long.o srcs/key_hook.o srcs/error_message.o srcs/actions.o srcs/drawing.o srcs/render_map.o srcs/init_images.o bonus/printer_ascii.o bonus/action_enemy.o libft/
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-09 18:58:09.902260857
+#  Last modified 2022-06-13 21:43:27.800023909
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 47):
@@ -412,7 +412,7 @@ so_long: srcs/so_long.o srcs/key_hook.o srcs/error_message.o srcs/actions.o srcs
 # Not a target:
 srcs/drawing.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 18:58:05.034376975
+#  Last modified 2022-06-13 21:43:22.276206529
 #  File has been updated.
 #  Successfully updated.
 
@@ -430,6 +430,6 @@ srcs/drawing.o:
 # strcache performance: lookups = 54 / hit rate = 38%
 # hash-table stats:
 # Load=33/8192=0%, Rehash=0, Collisions=1/54=2%
-# Finished Make data base on Thu Jun  9 19:01:34 2022
+# Finished Make data base on Wed Jun 15 11:02:53 2022
 
  
