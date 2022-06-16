@@ -60,8 +60,8 @@ void	free_asset(t_game *game)
 	mlx_destroy_image(game->mlx.mlx, game->wall);
 	mlx_destroy_image(game->mlx.mlx, game->collect);
 	mlx_destroy_image(game->mlx.mlx, game->asset.player1);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy1);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy2);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy3);
-	mlx_destroy_image(game->mlx.mlx, game->asset.enemy4);
+	mlx_destroy_image(game->mlx.mlx, game->asset.enemy[0]);
+	mlx_destroy_image(game->mlx.mlx, game->asset.enemy[1]);
+	mlx_destroy_image(game->mlx.mlx, game->asset.enemy[2]);
+	mlx_destroy_image(game->mlx.mlx, game->asset.enemy[3]);
 }

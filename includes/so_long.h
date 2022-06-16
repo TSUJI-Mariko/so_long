@@ -35,6 +35,7 @@ typedef struct s_asset
 	t_img	*enemy2;
 	t_img	*enemy3;
 	t_img	*enemy4;
+	t_img	*enemy[4];
 	t_img	*player1;
 	t_img	*player2;
 	t_img	*player3;

@@ -39,8 +39,8 @@ void	player_setting(t_game *game)
 void	enemy_setting(t_game *game)
 {
 	game->enemy_count = 0;
-	load_image(game, &game->asset.enemy1, "./img/cactus1.xpm");
-	load_image(game, &game->asset.enemy2, "./img/cactus2.xpm");
-	load_image(game, &game->asset.enemy3, "./img/cactus3.xpm");
-	load_image(game, &game->asset.enemy4, "./img/cactus4.xpm");
+	load_image(game, &game->asset.enemy[0], "./img/cactus1.xpm");
+	load_image(game, &game->asset.enemy[1], "./img/cactus2.xpm");
+	load_image(game, &game->asset.enemy[2], "./img/cactus3.xpm");
+	load_image(game, &game->asset.enemy[3], "./img/cactus4.xpm");
 }
